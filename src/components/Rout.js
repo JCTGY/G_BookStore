@@ -9,13 +9,13 @@ const Rout = () => {
     return (
             <Router>
                 <Switch>
-                    <Route exact path="/">
+                    <Route exact path="/G_BookStore">
                         <Header/>
                     </Route>
-                    <Route path="/shop">
+                    <Route path="/G_BookStore/shop">
                         <ShopList />
                     </Route>
-                    <Route path="/cart">
+                    <Route path="/G_BookStore/cart">
                         <p>Cart</p>
                     </Route>
                 </Switch>

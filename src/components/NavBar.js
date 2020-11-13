@@ -10,11 +10,11 @@ const NavBar = () => {
             <img src="https://www.print2eforms.com/wp-content/uploads/2016/10/Introduction-To-Google-Books.jpg" alt="Google Book"></img>
 
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="/"><AiOutlineHome /></Navbar.Brand>
+                <Navbar.Brand href="/G_BookStore"><AiOutlineHome /></Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/shop">Shop</Nav.Link>
-                    <Nav.Link href="/cart">Cart</Nav.Link>
+                    <Nav.Link href="/G_BookStore">Home</Nav.Link>
+                    <Nav.Link href="/G_BookStore/shop">Shop</Nav.Link>
+                    <Nav.Link href="/G_BookStore/cart">Cart</Nav.Link>
                 </Nav>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
