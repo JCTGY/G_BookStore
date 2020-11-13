@@ -10,7 +10,7 @@ const App = () => {
         <Container>
             <NavBar />
             <Rout />
-            <Footer/>
+            <Footer />
         </Container>
     );
 }

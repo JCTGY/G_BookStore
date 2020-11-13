@@ -9,7 +9,7 @@ const ShopItem = ({ item, id }) => {
   const checkOutList = useSelector(state => state.checkOut.checkOutList);
   const dispatch = useDispatch();
   const [qty, setQty] = useState(0)
-  const [price] = useState((Math.random() * 100).toFixed(2));
+  const [price, setPrice] = useState(Number.parseFloat((Math.random() * 100).toFixed(2)));
 
   const onClickAddItemInCart = () => setQty(qty + 1);
   const onClickMinusItemInCart = () => qty > 0 && setQty(qty - 1);
@@ -17,7 +17,7 @@ const ShopItem = ({ item, id }) => {
   useEffect(() => {
     function manageCheckOut() {
       const index = checkOutList && checkOutList.findIndex(c => c.id === id);
-      
+      if (index > 0) setPrice(checkOutList[index].price);
       if (qty === 0 && checkOutList && checkOutList.length > 0) {
         const newCheckOut = checkOutList.filter(c => c.id !== id);
         dispatch({type: 'REMOVE_ITEM', payload: newCheckOut});
