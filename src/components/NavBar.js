@@ -1,5 +1,4 @@
 import React from 'react';
-import {  HashRouter } from 'react-router-dom';
 
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
@@ -7,7 +6,6 @@ import { AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
 const NavBar = () => {
 
     return (
-        <HashRouter basename='/'>
         <div>
             <img src="https://www.print2eforms.com/wp-content/uploads/2016/10/Introduction-To-Google-Books.jpg" alt="Google Book"></img>
 
@@ -24,7 +22,6 @@ const NavBar = () => {
                 </Form>
             </Navbar>
         </div>
-        </HashRouter>
     );
 }
 
