@@ -12,7 +12,7 @@ const Footer = () => {
 
     return (
         <footer id="footer">
-        <div class="icon">
+        <div className="icon">
             <a href="https://twitter.com/Jeffreycode42"><AiFillTwitterSquare/></a>
             <a href="https://github.com/JCTGY"><AiFillGithub/></a>
             <a href="https://www.linkedin.com/in/jeffreycode42/"><AiFillLinkedin/></a>

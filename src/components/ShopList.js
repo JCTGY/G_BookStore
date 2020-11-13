@@ -16,7 +16,7 @@ const ShopList = () => {
 
         return (
             <Col className="col-lg-4 d-flex align-items-stretch" key={book.id} xs="4">
-                <ShopItem item={book.volumeInfo} />
+                <ShopItem id={book.id} item={book.volumeInfo} />
             </Col>
         );
     })
