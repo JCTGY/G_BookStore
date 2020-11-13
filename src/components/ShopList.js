@@ -15,7 +15,7 @@ const ShopList = () => {
     const bookList = books && books.items.map((book) => {
 
         return (
-            <Col key={book.id} xs="4">
+            <Col className="col-lg-4 d-flex align-items-stretch" key={book.id} xs="4">
                 <ShopItem item={book.volumeInfo} />
             </Col>
         );
