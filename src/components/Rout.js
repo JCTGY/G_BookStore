@@ -5,7 +5,7 @@ import ShopList from './ShopList';
 import Cart from './Cart';
 import Header from './Header';
 
-const Rout = () => {
+const Rout = ({ term }) => {
 
     return (
         <Switch>
@@ -13,7 +13,7 @@ const Rout = () => {
                 <Header />
             </Route>
             <Route path="/shop">
-                <ShopList />
+                <ShopList term={ term } />
             </Route>
             <Route path="/cart">
                 <Cart />

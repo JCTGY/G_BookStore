@@ -1,10 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import { AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
 
-const NavBar = () => {
+const NavBar = ({ updateTerm }) => {
+
+    const [search, setSearch] = useState("");
+    const location = useLocation();
+    const history = useHistory();
+    const goToShop = () => history.push('/shop');
+    
+    const onChangeInput = (e) => {
+        setSearch(e.target.value);
+    }
+
+    const onSubmitSearch = (e) => {
+        e.preventDefault();
+        updateTerm(search);
+        setSearch("");
+        if (location.pathname !== "/shop")
+            goToShop();
+    }
 
     return (
         <div>
@@ -17,8 +34,19 @@ const NavBar = () => {
                     <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
                 </Nav>
                 <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-info"><AiOutlineSearch /></Button>
+                    <FormControl 
+                        onChange={onChangeInput} 
+                        type="text" 
+                        placeholder="Search" 
+                        className="mr-sm-2" 
+                        value={search}
+                        required 
+                    />
+                    <button 
+                        className="btn btn-outline-success my-2 my-sm-0" 
+                        onClick={onSubmitSearch} variant="outline-info">
+                            <AiOutlineSearch />
+                    </button>
                 </Form>
             </Navbar>
         </div>

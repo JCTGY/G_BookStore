@@ -4,13 +4,13 @@ import { Row, Col } from 'react-bootstrap';
 import { getBookSearch } from '../api.js/GBookStore';
 import ShopItem from './ShopItem';
 
-const ShopList = () => {
+const ShopList = ({ term }) => {
 
     const [books, setBooks] = useState();
 
     useEffect(() => {
-        getBookSearch("Japan").then(res => setBooks(res.data))
-    }, []);
+        getBookSearch(term).then(res => setBooks(res.data))
+    }, [term]);
 
     const bookList = books && books.items.map((book) => {
 

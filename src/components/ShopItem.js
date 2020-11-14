@@ -17,7 +17,10 @@ const ShopItem = ({ item, id }) => {
   useEffect(() => {
     function manageCheckOut() {
       const index = checkOutList && checkOutList.findIndex(c => c.id === id);
-      if (index > 0) setPrice(checkOutList[index].price);
+      if (index >= 0) {
+        setPrice(checkOutList[index].price);
+        if (qty === 0) setQty(checkOutList[index].qty);
+      }
       if (qty === 0 && checkOutList && checkOutList.length > 0) {
         const newCheckOut = checkOutList.filter(c => c.id !== id);
         dispatch({type: 'REMOVE_ITEM', payload: newCheckOut});

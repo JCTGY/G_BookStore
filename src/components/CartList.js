@@ -7,8 +7,6 @@ const CartList = () => {
 
     const checkOutList = useSelector(state => state.checkOut.checkOutList);
     const total = checkOutList.reduce((accumulator, currentValue) => {
-        console.log("price: " + currentValue.price);
-        console.log("total: " + accumulator);
         return accumulator + Number.parseFloat(((currentValue.price * currentValue.qty).toFixed(2)));
     }, 0)
 

@@ -4,7 +4,7 @@ const CartItem = ({item, index}) => {
 
     return (
             <tr>
-                <th scope="row">{index}</th>
+                <th scope="row">{index + 1}</th>
                 <td>{item.title}</td>
                 <td><img className="price-image" src={item.img} alt=""/></td>
                 <td>{item.qty}</td>
