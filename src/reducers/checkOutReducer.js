@@ -21,6 +21,10 @@ const checkOutReducer = (state = initState, action) => {
                 ...state,
                 checkOutList: action.payload
             }
+        case 'CLEAN_ITEM':
+            return {
+                checkOutList: []
+            }
         default:
             return state
     }

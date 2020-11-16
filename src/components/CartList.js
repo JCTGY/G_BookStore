@@ -7,12 +7,13 @@ const CartList = () => {
 
     const checkOutList = useSelector(state => state.checkOut.checkOutList);
     const total = checkOutList.reduce((accumulator, currentValue) => {
-        return accumulator + Number.parseFloat(((currentValue.price * currentValue.qty).toFixed(2)));
-    }, 0)
+        return accumulator + Number.parseFloat(currentValue.price * currentValue.qty);
+    }, 0).toFixed(2);
 
     const listTable = checkOutList.map((c, index) => {
         return <CartItem item={c} key={c.id} index={index} />;
     })
+
     return (
         <div>
             <table className="table table-sm">
@@ -31,15 +32,6 @@ const CartList = () => {
                         <th scope="row"></th>
                         <td colSpan="3">Total</td>
                         <td>${total}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td colSpan="3"></td>
-                        <td>              
-                            <button className="btn btn-primary text">
-                                Checkout
-                            </button>
-                        </td>
                     </tr>
                 </tbody>
             </table>

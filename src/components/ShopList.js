@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
 
-import { getBookSearch } from '../api.js/GBookStore';
+import { getBookSearch } from '../api/GBookStore';
 import ShopItem from './ShopItem';
 import ShopPages from './ShopPages';
 
@@ -13,6 +13,9 @@ const ShopList = ({ term }) => {
     useEffect(() => {
         getBookSearch(term, page * 12).then(res => setBooks(res.data))
     }, [term, page]);
+    useEffect(() => {
+        setPage(0);
+    }, [term]);
 
     const bookList = books && books.items.map((book) => {
 
@@ -29,6 +32,7 @@ const ShopList = ({ term }) => {
             <Row>
                 {bookList}
             </Row>
+            <ShopPages setPage={setPage} page={page}/>
         </div>
     );
 }

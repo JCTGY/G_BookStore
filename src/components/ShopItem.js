@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
-import './ShopItem.css';
 
 import { SHOP_ITEM_DEFAULT } from '../constant';
+// import ShopItemPopover from './ShopItemPopover';
 
 const ShopItem = ({ item, id }) => {
 
@@ -55,9 +55,10 @@ const ShopItem = ({ item, id }) => {
         <p
           className="card-text">
           {item.description ?
-            item.description.slice(0, 100) :
+            item.description.slice(0, 100) + "..." :
             SHOP_ITEM_DEFAULT.DESCRIPTION}
         </p>
+        {/* {item.description && <ShopItemPopover buttonTitle={"readMore"} content={item.description}/>} */}
         <h6>${price}</h6>
         {
           qty === 0 ?
