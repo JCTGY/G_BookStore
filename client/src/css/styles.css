@@ -1,0 +1,46 @@
+
+/* ShopList */
+.price-image {
+        width:100px;
+        height:100px;
+     
+     /*Scale down will take the necessary specified space that is 100px x 100px without stretching the image*/
+         object-fit:scale-down;
+}
+
+/* shopItem */
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.card {
+    margin: 2%;
+}
+
+/* ShopPages */
+.pagination{
+    margin: 2%;
+}
+
+/* Cart */
+.empty-cart {
+    width: auto;
+    height: 15vw;
+}
+
+/* Header*/
+.header {
+    background:transparent;
+ }
+
+
+/* Footer */
+#footer {
+    text-align: center;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
